@@ -1,0 +1,38 @@
+<form action="/addtxt" method="post">
+    <div class="row">
+        <input spellcheck="true" style="width:200px" placeholder="add a text here
+            " class="form-control form-control" type="text" name="userTxt" id="usertxt">
+
+        <button type="submit" class="btn btn-labeled btn-success">
+            <span class="btn-label">
+                <i class="glyphicon glyphicon-ok"></i>
+            </span>
+            Add
+        </button>
+
+    </div>
+
+    {{#if failMsg}}
+        <p class="alert alert-danger p-3">{{failMsg}}</p>
+    {{/if}}
+
+
+    <ul class="list-group p-3">
+        {{#each listInp}}
+            <li class="list-group-item">{{ this }}
+                <a href="/addtxt/delete/{{@index}}" class="btn btn-info btn-mx">
+                    <span class="glyphicon glyphicon-trash">
+                    </span>
+                    Delete
+                </a>
+            </li>
+        {{/each}}
+    </ul>
+
+</form>
+
+<a class="btn btn-info btn-mx" href="/">
+    <span class="glyphicon glyphicon-menu-left">
+    </span>
+    Back
+</a>
